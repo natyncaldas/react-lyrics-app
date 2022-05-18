@@ -1,1 +1,1 @@
-# react-quiz-app
+# react-lyrics-app
