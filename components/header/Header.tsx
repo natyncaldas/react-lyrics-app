@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import Cleve from '../../assets/icons/cleve.svg';
 import Silence from '../../assets/icons/silence.svg';
 import useWindowSize from '../../libs/hooks/useWindowSize';
+import SearchBar from '../globals/SearchBar';
 
 const Container = styled.div<{opacity:boolean}>`
     display: flex;
@@ -32,6 +34,7 @@ const CleveIcon = styled(Cleve)`
     width: 80px;
     height: 80px;   
     margin: -15px 0 0 -15px;
+    cursor: pointer;
 `;
 
 const SilenceIcon = styled(Silence)`
@@ -63,6 +66,7 @@ const SearchContainer = styled.div`
 `;
 
 const Header = () => {
+    const router = useRouter();
     const {isMobile} = useWindowSize();
     const [opacity, setOpacity] = useState(true)
 
@@ -77,12 +81,13 @@ const Header = () => {
     return(
         <Container opacity={opacity}>
             <CompassBox>
-                <CleveIcon />
+                <CleveIcon onClick={()=>router.push('/')}/>
                 {!isMobile && <SilenceIcon/>}
                 <Line/>
                 <Line/>
                 <Line/>
                 <SearchContainer>
+                    <SearchBar/>
                 </SearchContainer>
             </CompassBox>
         </Container>
