@@ -1,0 +1,35 @@
+html,
+html {
+  --color-bg: #FFFFFF;
+  --color-fg: #000000;
+  --blue: #40A3B9;
+  --green: #AABBAC;
+  --yellow: #D6B591;
+  --orange: #C98E8F;
+  --pink: #C2658B;
+  background: rgb(136,79,103);
+background: -moz-linear-gradient(90deg, rgba(136,79,103,1) 0%, rgba(85,137,149,1) 50%, rgba(13,33,37,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(136,79,103,1) 0%, rgba(85,137,149,1) 50%, rgba(13,33,37,1) 100%);
+background: linear-gradient(90deg, rgba(136,79,103,1) 0%, rgba(85,137,149,1) 50%, rgba(13,33,37,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#884f67",endColorstr="#0d2125",GradientType=1);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica Neue, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
