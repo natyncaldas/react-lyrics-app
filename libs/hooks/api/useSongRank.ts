@@ -1,9 +1,9 @@
 import useSWR from "swr";
-import { SongRank } from "../../interfaces/song.interface";
+import { SongRank } from "../../interfaces/lyrics.interface";
 import { vagalumeAPI } from "../../services/axios";
 
 const useSongRank = () => {
-    const url = `/rank.php?${process.env.VAGALUME_API_KEY}&type=mus&scope=all&limit=20&period=day`;
+    const url = `/rank.php?type=mus&scope=all&limit=20&period=day`;
     const fetcher = (url:string) : Promise<SongRank> => vagalumeAPI.get(url).then(res => res.data);
 
     const { data, error } = useSWR( url, fetcher )
