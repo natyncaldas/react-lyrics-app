@@ -7,19 +7,23 @@ interface LayoutProps {
     children: ReactNode;
 }
 
+const Layout = styled.div`
+    position: relative;
+`;
+
 const Body = styled.div`
-    margin-top: 200px;
+    padding: 200px 50px 500px 50px;
 `;
 
 const DefaultLayout = ({children}: LayoutProps) => {
     return(
-        <>
+        <Layout>
             <Header/>
             <Body>
                 {children}
             </Body>
             <Footer/>
-        </>
+        </Layout>
     )
 }
 export default DefaultLayout;

@@ -2,17 +2,18 @@ import styled from "styled-components";
 import vagalume from '../../assets/images/vagalume.png'
 import Image from 'next/image'
 
-const Container = styled.footer`
-display: flex;
+const Container = styled.div`
+    display: flex;
     flex-flow: column nowrap;
     gap: 50px;
     position: absolute;
     width: 100%;
     height: 200px;
     background-color: #1e314a;
-    bottom: 0;
+    bottom: 0px;
     padding: 10px;
-`
+    margin-top: 300px;
+`;
 const Row = styled.div`
     display: flex;
     flex-flow: row nowrap;

@@ -7,11 +7,11 @@ html {
   --yellow: #D6B591;
   --orange: #C98E8F;
   --pink: #C2658B;
-  background: rgb(194,101,139);
-  background: -moz-linear-gradient(90deg, rgba(194,101,139,1) 0%, rgba(214,198,145,1) 50%, rgba(64,163,185,1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(194,101,139,1) 0%, rgba(214,198,145,1) 50%, rgba(64,163,185,1) 100%);
-  background: linear-gradient(90deg, rgba(194,101,139,1) 0%, rgba(214,198,145,1) 50%, rgba(64,163,185,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c2658b",endColorstr="#40a3b9",GradientType=1);
+  background: rgb(136,79,103);
+background: -moz-linear-gradient(90deg, rgba(136,79,103,1) 0%, rgba(85,137,149,1) 50%, rgba(13,33,37,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(136,79,103,1) 0%, rgba(85,137,149,1) 50%, rgba(13,33,37,1) 100%);
+background: linear-gradient(90deg, rgba(136,79,103,1) 0%, rgba(85,137,149,1) 50%, rgba(13,33,37,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#884f67",endColorstr="#0d2125",GradientType=1);
 }
 
 body {
