@@ -3,10 +3,10 @@ import { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { SWRConfig } from "swr";
 import MusicPlayerCard from "../components/home/MusicPlayerCard";
-import RankList from "../components/home/RankList";
+import RankList from "../components/globals/RankList";
 import DefaultLayout from "../layouts/DefaultLayout";
 import useSongRank from "../libs/hooks/api/useSongRank";
-import { Song } from "../libs/interfaces/song.interface";
+import { Song } from "../libs/interfaces/lyrics.interface";
 import { vagalumeAPI } from "../libs/services/axios";
 
 const Row = styled.div`
@@ -39,16 +39,11 @@ const Home: NextPage = () => {
       const timeout = setTimeout(() => {
         setLoading(false);
       }, 2000);
-      return () => {
-        timeout
-      }
+      return () => { timeout }
     }else{
       setLoading(isLoading);
     }
-  
   }, [isLoading])
-  
-    
 
   return (
     <DefaultLayout>

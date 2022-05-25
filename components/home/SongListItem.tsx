@@ -21,6 +21,9 @@ const Card = styled.div`
     padding: 20px;
     margin-bottom: 20px;
     animation: ${fadeIn} 1s linear 1;
+    &:hover{
+        background-color:var(--green);
+    }
 `;
 
 const Row = styled.div`
@@ -70,18 +73,21 @@ const List = styled(ListIcon)`
 
 
 interface RankListItemProps {
-    rank: number;
-    coverUrl: string
+    rank?: number;
+    coverUrl?: string
     songTitle: string
     artistName: string
+    hasRank?: boolean
+    hasCover?: boolean
+    onClick?: ()=>void;
 }
 
-const RankListItem = ({rank, coverUrl, songTitle, artistName}: RankListItemProps) => {
+const SongListItem = ({rank, coverUrl, songTitle, artistName, hasRank=true, hasCover=true, onClick}: RankListItemProps) => {
     return (
-        <Card>
+        <Card onClick={onClick}>
             <Row>
-                <Rank>#{rank}</Rank>
-                <Cover src={coverUrl}/>
+                {hasRank && <Rank>#{rank}</Rank>}
+                {hasCover && <Cover src={coverUrl}/>}
                 <SongInfo>
                     <Title>{songTitle}</Title>
                     <Subtitle>{artistName}</Subtitle>
@@ -94,4 +100,4 @@ const RankListItem = ({rank, coverUrl, songTitle, artistName}: RankListItemProps
     )
 }
 
-export default RankListItem;
+export default SongListItem;
