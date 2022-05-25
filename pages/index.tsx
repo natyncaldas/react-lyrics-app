@@ -49,7 +49,7 @@ const Home: NextPage = () => {
     <DefaultLayout>
       <Row>
         <Title>Browse for lyrics from your favorite songs</Title>
-        <MusicPlayerCard loading={loading} songTitle={displaySong?.name ?? ''} artistName={displaySong?.art.name ?? ''} coverUrl={displaySong?.art.pic_medium  ?? ''}/>
+        <MusicPlayerCard loading={loading} songId={displaySong?.id ?? ''} songTitle={displaySong?.name ?? ''} artistName={displaySong?.art.name ?? ''} coverUrl={displaySong?.art.pic_medium  ?? ''}/>
         <RankList songs={rank?.mus.day.all ?? []}/>
       </Row>
     </DefaultLayout>

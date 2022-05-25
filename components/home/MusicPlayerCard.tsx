@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import PlayIcon from "../../assets/icons/play.svg"
 import NextIcon from "../../assets/icons/next.svg"
 import BackIcon from "../../assets/icons/back.svg"
+import { useRouter } from "next/router";
 
 const Card = styled.div`
     display: flex;
@@ -127,6 +128,7 @@ const Play = styled(PlayIcon)`
     &:hover{
         fill: lightgreen;
     }
+    cursor: pointer;
 `;
 
 const Next = styled(NextIcon)`
@@ -135,12 +137,15 @@ const Next = styled(NextIcon)`
 
 interface MusicPlayerCardProps {
     loading: boolean;
-    coverUrl: string
-    songTitle: string
-    artistName: string
+    coverUrl: string;
+    songTitle: string;
+    artistName: string;
+    songId: string;
 }
 
-const MusicPlayerCard = ({loading, coverUrl, songTitle, artistName}:MusicPlayerCardProps) => {
+const MusicPlayerCard = ({loading, coverUrl, songTitle, artistName, songId}:MusicPlayerCardProps) => {
+    const router = useRouter();
+
     return (
         <Card>
             {loading?
@@ -157,7 +162,7 @@ const MusicPlayerCard = ({loading, coverUrl, songTitle, artistName}:MusicPlayerC
             </Line>
             <Player>
                 <Back width={25} height={25} fill='white'/>
-                <Play width={60} height={60} fill='white'/>
+                <Play width={60} height={60} fill='white' onClick={()=>router.push(`/lyrics/${songId}`)}/>
                 <Next width={25} height={25} fill='white'/>
             </Player>
         </Card>
