@@ -1,17 +1,17 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import Cleve from '../../assets/icons/cleve.svg';
 import Silence from '../../assets/icons/silence.svg';
 import useWindowSize from '../../libs/hooks/useWindowSize';
 
-const Container = styled.div<{opacity:boolean}>`
+const Container = styled.div<{isTransparent:boolean}>`
     display: flex;
     position: fixed;
     top: 0;
     width: 100%;
     height: 100px;
     background-color: black;
-    opacity: ${({opacity}) => opacity ? '0.6': '1'};
+    opacity: ${({isTransparent}) => isTransparent ? '0.6': '1'};
     padding: 5px 10px 10px 0px;
     z-index: 999;
 `;
@@ -64,18 +64,18 @@ const SearchContainer = styled.div`
 
 const Header = () => {
     const {isMobile} = useWindowSize();
-    const [opacity, setOpacity] = useState(true)
+    const [isTransparent, setTransparent] = useState(true);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
           window.addEventListener("scroll", () =>
-            setOpacity(window.pageYOffset < 120)
+            setTransparent(window.pageYOffset < 120)
           );
         }
       }, []);
     
     return(
-        <Container opacity={opacity}>
+        <Container isTransparent={isTransparent}>
             <CompassBox>
                 <CleveIcon />
                 {!isMobile && <SilenceIcon/>}
